@@ -132,6 +132,9 @@
 .animate-ticker {
 	animation: ticker 40s linear infinite;
 }
+.animate-ticker-slow {
+	animation: ticker 55s linear infinite;
+}
 .animate-shimmer {
 	background: linear-gradient(
 		90deg,
@@ -146,4 +149,154 @@
 }
 .metric-enter {
 	animation: metric-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes page-shake {
+	0%,
+	100% {
+		transform: translate(0, 0);
+	}
+	10% {
+		transform: translate(-3px, 2px) rotate(-0.2deg);
+	}
+	20% {
+		transform: translate(4px, -2px) rotate(0.3deg);
+	}
+	30% {
+		transform: translate(-2px, -3px) rotate(-0.15deg);
+	}
+	40% {
+		transform: translate(3px, 2px) rotate(0.2deg);
+	}
+	50% {
+		transform: translate(-4px, 1px);
+	}
+	60% {
+		transform: translate(2px, -2px);
+	}
+}
+
+.chaos-page-shake {
+	animation: page-shake 0.35s ease-in-out 4;
+}
+
+@keyframes flash-418 {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	15%,
+	45% {
+		opacity: 1;
+	}
+}
+
+.chaos-flash-418 {
+	animation: flash-418 0.55s ease-out;
+	pointer-events: none;
+}
+
+@keyframes teapot-meltdown {
+	0% {
+		transform: translate(0, 0) rotate(0deg) scale(1);
+	}
+	12% {
+		transform: translate(-10px, 4px) rotate(-14deg) scale(1.03);
+	}
+	25% {
+		transform: translate(12px, -6px) rotate(12deg) scale(0.98);
+	}
+	37% {
+		transform: translate(-8px, -4px) rotate(-10deg) scale(1.02);
+	}
+	50% {
+		transform: translate(10px, 5px) rotate(11deg) scale(1);
+	}
+	62% {
+		transform: translate(-6px, 3px) rotate(-8deg);
+	}
+	75% {
+		transform: translate(7px, -3px) rotate(9deg);
+	}
+	87% {
+		transform: translate(-4px, -2px) rotate(-5deg);
+	}
+	100% {
+		transform: translate(0, 0) rotate(0deg) scale(1);
+	}
+}
+
+.animate-teapot-meltdown {
+	animation: teapot-meltdown 0.28s ease-in-out infinite;
+}
+
+@keyframes fly-tea {
+	0% {
+		opacity: 1;
+		transform: translate(0, 0) rotate(0deg) scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(var(--tx), var(--ty)) rotate(var(--rot)) scale(0.6);
+	}
+}
+
+.fly-tea-emoji {
+	animation: fly-tea 2.2s ease-out forwards;
+}
+
+@keyframes splat-fall {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px) scale(0.3);
+	}
+	25% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+	70% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(8px) scale(0.2);
+	}
+}
+
+.coffee-splat {
+	animation: splat-fall 1.8s ease-in forwards;
+}
+
+@keyframes scream-pop {
+	0% {
+		opacity: 0;
+		transform: scale(0.85) translateY(8px);
+	}
+	20% {
+		opacity: 1;
+		transform: scale(1.05) translateY(0);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+}
+
+.scream-banner {
+	animation: scream-pop 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes particle-burst {
+	0% {
+		opacity: 0.8;
+		transform: translate(0, 0) scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(var(--px), var(--py)) scale(0.2);
+	}
+}
+
+.steam-particle {
+	animation: particle-burst 1.4s ease-out forwards;
 }
